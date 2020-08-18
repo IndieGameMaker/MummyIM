@@ -19,11 +19,14 @@ public class StageManager : MonoBehaviour
     void Start()
     {
         pos = transform.position + new Vector3(0.5f, 0.55f, -1f);
+        InitStage();
     }
 
     public void InitStage()
     {
         int idx = Random.Range(0, hintPrefabs.Length); //0, 1, 2
-        //Instantiate()
+        GameObject hint = Instantiate(hintPrefabs[idx], pos, Quaternion.identity);
+        hint.name = "HINT";
+        hintColor = (HINT_COLOR)idx;
     }
 }
