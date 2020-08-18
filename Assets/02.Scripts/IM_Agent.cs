@@ -57,6 +57,7 @@ public class IM_Agent : Agent
 
         switch ((int)vectorAction[1])
         {
+            case 0: rb.angularVelocity = Vector3.zero; break;
             case 1: rot = -tr.up; break;
             case 2: rot =  tr.up; break;
         }
@@ -91,5 +92,55 @@ public class IM_Agent : Agent
         {
             actionsOut[1] = 2.0f;
         }
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("RED"))
+        {
+            if (stageManager.hintColor == StageManager.HINT_COLOR.RED)
+            {
+                floorRd.material = rightMt;
+                SetReward(1.0f);
+                EndEpisode();
+            }
+            else
+            {
+                floorRd.material = wrongMt;
+                SetReward(-1.0f);
+                EndEpisode();
+            }
+        }
+        if (coll.collider.CompareTag("GREEN"))
+        {
+            if (stageManager.hintColor == StageManager.HINT_COLOR.GREEN)
+            {
+                floorRd.material = rightMt;
+                SetReward(1.0f);
+                EndEpisode();
+            }
+            else
+            {
+                floorRd.material = wrongMt;
+                SetReward(-1.0f);
+                EndEpisode();
+            }
+        }
+
+        if (coll.collider.CompareTag("BLUE"))
+        {
+            if (stageManager.hintColor == StageManager.HINT_COLOR.BLUE)
+            {
+                floorRd.material = rightMt;
+                SetReward(1.0f);
+                EndEpisode();
+            }
+            else
+            {
+                floorRd.material = wrongMt;
+                SetReward(-1.0f);
+                EndEpisode();
+            }
+        }        
     }
 }
