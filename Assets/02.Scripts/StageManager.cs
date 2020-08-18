@@ -24,8 +24,11 @@ public class StageManager : MonoBehaviour
 
     public void InitStage()
     {
+        var prevObj = transform.Find("HINT");
+        if (prevObj != null) Destroy(prevObj.gameObject);
+
         int idx = Random.Range(0, hintPrefabs.Length); //0, 1, 2
-        GameObject hint = Instantiate(hintPrefabs[idx], pos, Quaternion.identity);
+        GameObject hint = Instantiate(hintPrefabs[idx], pos, Quaternion.identity, this.transform);
         hint.name = "HINT";
         hintColor = (HINT_COLOR)idx;
     }
