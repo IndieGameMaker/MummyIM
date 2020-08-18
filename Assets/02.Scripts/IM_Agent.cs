@@ -9,7 +9,7 @@ public class IM_Agent : Agent
     private Rigidbody rb;
     private Transform tr;
 
-    private float moveSpeed = 0.3f;
+    private float moveSpeed = 0.5f;
     private float turnSpeed = 300.0f;
 
     private StageManager stageManager;
