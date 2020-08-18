@@ -860,8 +860,8 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
   floorRd: {fileID: 1980748832}
-  rightMt: {fileID: 0}
-  wrongMt: {fileID: 0}
+  rightMt: {fileID: 2100000, guid: 78c9cf2fc33e84d5daa1562f719fe7d5, type: 2}
+  wrongMt: {fileID: 2100000, guid: 8a8a44be8a45a482faaa8860ae7943a2, type: 2}
 --- !u!114 &963025053
 MonoBehaviour:
   m_ObjectHideFlags: 0
