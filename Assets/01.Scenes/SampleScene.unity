@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ba0aec05e3b4806b4af0f498a545ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintColor: 0
+  hintColor: 1
   hintPrefabs:
   - {fileID: 8004640979005020197, guid: 78a61753bbcb44047ba494815f8e71b3, type: 3}
   - {fileID: 8004640979005020197, guid: 688265c7bc0ef4ad18e44b5bc70d2754, type: 3}

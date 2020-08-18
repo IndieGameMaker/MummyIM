@@ -33,7 +33,7 @@ public class IM_Agent : Agent
     public override void OnEpisodeBegin()
     {
         stageManager.InitStage();
-        
+
         tr.localPosition = new Vector3(Random.Range(-4.0f, 4.0f), 0.05f, -4.0f);
         tr.localRotation = Quaternion.identity;
         rb.velocity = rb.angularVelocity = Vector3.zero;
@@ -150,6 +150,11 @@ public class IM_Agent : Agent
                 SetReward(-1.0f);
                 EndEpisode();
             }
+        }
+
+        if (coll.collider.CompareTag("WALL"))
+        {
+            SetReward(-0.005f);
         }        
     }
 }
