@@ -9,7 +9,7 @@ public class IM_Agent : Agent
     private Rigidbody rb;
     private Transform tr;
 
-    private float moveSpeed = 0.5f;
+    private float moveSpeed = 1f;
     private float turnSpeed = 300.0f;
 
     private StageManager stageManager;
@@ -56,7 +56,7 @@ public class IM_Agent : Agent
         Vector3 dir = Vector3.zero;
         Vector3 rot = Vector3.zero;
 
-        Debug.Log($"{(int)vectorAction[0]} / {(int)vectorAction[1]}");
+        //Debug.Log($"{(int)vectorAction[0]} / {(int)vectorAction[1]}");
 
         switch ((int)vectorAction[0])
         {

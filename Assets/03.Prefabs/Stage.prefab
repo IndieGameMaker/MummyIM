@@ -81,7 +81,7 @@ MonoBehaviour:
     VectorActionSize: 0300000003000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 4ebbe0c029883456d870f42360e6c0bd, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: Mummy
@@ -120,7 +120,6 @@ MonoBehaviour:
   - RED
   - GREEN
   - BLUE
-  - HINT
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.5
