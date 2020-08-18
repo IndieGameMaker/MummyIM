@@ -32,7 +32,9 @@ public class IM_Agent : Agent
 
     public override void OnEpisodeBegin()
     {
-
+        tr.localPosition = new Vector3(Random.Range(-4.0f, 4.0f), 0.05f, -4.0f);
+        tr.localRotation = Quaternion.identity;
+        rb.velocity = rb.angularVelocity = Vector3.zero;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -42,11 +44,38 @@ public class IM_Agent : Agent
 
     public override void OnActionReceived(float[] vectorAction)
     {
+        Vector3 dir = Vector3.zero;
+        Vector3 rot = Vector3.zero;
+
+        Debug.Log($"{(int)vectorAction[0]} / {(int)vectorAction[1]}");
 
     }
 
     public override void Heuristic(float[] actionsOut)
     {
+        actionsOut[0] = 0.0f;   //전/후 이동  W, S  = 0, 1, 2
+        actionsOut[1] = 0.0f;   //좌/우 회전  A, D  = 0, 1, 2
 
+        //전진
+        if (Input.GetKey(KeyCode.W))
+        {
+            actionsOut[0] = 1.0f;
+        }
+        //후진
+        if (Input.GetKey(KeyCode.S))
+        {
+            actionsOut[0] = 2.0f;
+        }
+
+        //왼쪽 회전
+        if (Input.GetKey(KeyCode.A))
+        {
+            actionsOut[1] = 1.0f;
+        }
+        //오른쪽 회전
+        if (Input.GetKey(KeyCode.D))
+        {
+            actionsOut[1] = 2.0f;
+        }
     }
 }
