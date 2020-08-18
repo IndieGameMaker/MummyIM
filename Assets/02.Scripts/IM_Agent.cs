@@ -49,6 +49,20 @@ public class IM_Agent : Agent
 
         Debug.Log($"{(int)vectorAction[0]} / {(int)vectorAction[1]}");
 
+        switch ((int)vectorAction[0])
+        {
+            case 1: dir =  tr.forward; break;
+            case 2: dir = -tr.forward; break;
+        }
+
+        switch ((int)vectorAction[1])
+        {
+            case 1: rot = -tr.up; break;
+            case 2: rot =  tr.up; break;
+        }
+
+        rb.AddForce(dir * moveSpeed, ForceMode.VelocityChange);
+        rb.AddTorque(rot * turnSpeed, ForceMode.VelocityChange);
     }
 
     public override void Heuristic(float[] actionsOut)
