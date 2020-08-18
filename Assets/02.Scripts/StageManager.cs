@@ -13,16 +13,17 @@ public class StageManager : MonoBehaviour
     public HINT_COLOR hintColor;
 
     public GameObject[] hintPrefabs;
+    public Vector3 pos;
+    public float range = 9.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        pos = transform.position + new Vector3(0.5f, 0.55f, -1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitStage()
     {
-        
+        int idx = Random.Range(0, hintPrefabs.Length); //0, 1, 2
+        //Instantiate()
     }
 }
